@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Kg to Pounds Converter</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Kg to Pounds Converter</h1>
+<form action="#" th:action="@{/convert}" method="post">
+    <label for="kilograms">Kilograms:</label>
+    <input type="number" id="kilograms" name="kilograms" step="0.01" required>
+    <button type="submit">Convert</button>
+</form>
+<div th:if="${kilograms != null}">
+    <p th:text="'Kilograms: ' + ${kilograms}"></p>
+    <p th:text="'Pounds: ' + ${pounds}"></p>
+</div>
+</body>
+</html>
